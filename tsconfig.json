@@ -1,0 +1,18 @@
+{
+  "files": [
+    "src/main.ts"
+  ],
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "lib": ["es6", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "transpiled/app",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es5"
+  }
+}
