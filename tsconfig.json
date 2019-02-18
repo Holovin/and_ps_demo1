@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "lib": ["es6", "dom"],
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
     "outDir": "transpiled/app",
     "skipLibCheck": true,

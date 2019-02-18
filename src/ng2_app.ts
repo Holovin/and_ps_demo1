@@ -7,6 +7,7 @@ import {HomeNg2Module} from "./ng2";
 import {InputNg2Component} from "./ng2/input-ng2.component";
 import {$ROOT_SCOPE} from "@angular/upgrade/static/src/common/constants";
 import {InputNg1To2UpComponent} from "./ng1/input-ng1-to2.component";
+import {ContainerForNg1UpgradedComponent} from "./ng2/container-for-ng1-upgraded.component";
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {

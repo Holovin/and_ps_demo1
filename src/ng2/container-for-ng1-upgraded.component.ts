@@ -3,7 +3,9 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'container-ng1',
     template: `
-        тут текст > <ng1up></ng1up>
+        Это компонент на ng2
+        <br>
+        <inputNg1></inputNg1>
     `,
 })
 export class ContainerForNg1UpgradedComponent {

@@ -20,7 +20,7 @@ import {ContainerForNg1UpgradedComponent} from "./container-for-ng1-upgraded.com
                     { path: '**', component: NotFoundNg2Component },
                 ],
             },
-        ])
+        ]),
     ],
     declarations: [
         InputNg1To2UpComponent,
@@ -34,6 +34,9 @@ import {ContainerForNg1UpgradedComponent} from "./container-for-ng1-upgraded.com
         HomeNg2Component,
         NotFoundNg2Component,
     ],
+    providers: [
+        {provide: '$scope', useExisting: '$rootScope'},
+    ]
 })
 export class HomeNg2Module {
 }

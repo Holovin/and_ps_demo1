@@ -8,5 +8,5 @@ class InputNg1Controller {
 
 export const InputNg1Component = {
     controller: InputNg1Controller,
-    template: `test 2k19`,
+    template: `Это компонент на ng1`,
 };
