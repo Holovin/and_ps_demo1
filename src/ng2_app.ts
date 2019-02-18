@@ -1,10 +1,12 @@
-import {NgModule, Component} from '@angular/core';
+import {NgModule, Component, InjectionToken} from '@angular/core';
 import {NavigationEnd, Router, RouterEvent, RouterModule, UrlHandlingStrategy} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
 
 import {HomeNg2Module} from "./ng2";
 import {InputNg2Component} from "./ng2/input-ng2.component";
+import {$ROOT_SCOPE} from "@angular/upgrade/static/src/common/constants";
+import {InputNg1To2UpComponent} from "./ng1/input-ng1-to2.component";
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
@@ -53,13 +55,7 @@ export class Ng2Component {
     imports: [
         BrowserModule,
         UpgradeModule,
-
-        // import all modules
-        // MenuNgModule,
-        // MessagesNgModule,
-        // SettingsNgModule,
         HomeNg2Module,
-
         // We don't need to provide any routes.
         // The router will collect all routes from all the registered modules.
         RouterModule.forRoot([])
@@ -76,7 +72,10 @@ export class Ng2Component {
         Ng2Component,
         InputNg2Component,
     ],
-
+    exports: [
+        Ng2Component,
+        InputNg2Component,
+    ],
     entryComponents: [
         InputNg2Component,
     ]

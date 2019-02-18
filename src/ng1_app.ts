@@ -8,14 +8,13 @@ import uiRouter  from '@uirouter/angularjs';
 
 // import app modules
 import {InputModule} from './input/inputModule';
-import {downgradeInjectable} from "@angular/upgrade/static";
-import {Router} from "@angular/router";
-// import {MenuModule} from './menu';
+import {Ng1Module} from "./ng1/ng1module";
 
 export const Ng1AppModule = angular.module('Ng1AppModule',
     [
         uiRouter,
         InputModule.name,
+        Ng1Module.name,
     ]);
 
 Ng1AppModule.config(['$locationProvider', ($locationProvider) => {

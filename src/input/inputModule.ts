@@ -1,5 +1,3 @@
-// This module is in the midst of transitiong from Angular 1 to Angular 2.
-// We migrated MessageTextCmp to Angular2.
 import * as angular from 'angular';
 import {downgradeComponent} from '@angular/upgrade/static';
 import {InputNg2Component} from "../ng2/input-ng2.component";
@@ -8,14 +6,7 @@ export const InputModule = angular
     .module('InputModule', [
         'ui.router',
     ]);
-    // .run(['$rootScope', ($rootScope) => {
-    //     $rootScope.$on('$stateChangeSuccess', () => {
-    //         console.warn('event!');
-    //     });
-    // }]);
 
-// InputModule.component('message', MessageCmp);
-// InputModule.service('repository', Repository);
 InputModule.config(['$stateProvider', ($stateProvider) => {
     $stateProvider
         .state('home', {
@@ -34,22 +25,18 @@ InputModule.config(['$stateProvider', ($stateProvider) => {
                 $scope.input2 = $stateParams.input2;
             }],
         })
+
         .state('empty', {
             url: '/',
-            template: ''
+            template: '[empty ng1]'
         })
+
         .state('empty2', {
             url: '/ng2/*',
-            template: ''
+            template: '[empty ng1]'
         })
-    // $urlRouterProvider.otherwise('/ng1');
 }]);
 
-// export function exportRepository(m: UpgradeModule): Repository {
-//     return m.$injector.get('repository');
-// }
-
-// components migrated to angular 2 should be downgraded here
 InputModule.directive('inputNg', downgradeComponent(
     {
         component: InputNg2Component,
