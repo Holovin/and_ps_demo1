@@ -7,13 +7,13 @@ import * as angular from 'angular';
 import uiRouter  from '@uirouter/angularjs';
 
 // import app modules
-import {InputModule} from './input/inputModule';
+import {Ng1routerModule} from './ng1/ng1router.module';
 import {Ng1Module} from "./ng1/ng1module";
 
 export const Ng1AppModule = angular.module('Ng1AppModule',
     [
         uiRouter,
-        InputModule.name,
+        Ng1routerModule.name,
         Ng1Module.name,
     ]);
 

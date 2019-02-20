@@ -1,13 +1,19 @@
-import {NgModule, Component, InjectionToken} from '@angular/core';
+import {NgModule, Component} from '@angular/core';
 import {NavigationEnd, Router, RouterEvent, RouterModule, UrlHandlingStrategy} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
 
 import {HomeNg2Module} from "./ng2";
 import {InputNg2Component} from "./ng2/input-ng2.component";
-import {$ROOT_SCOPE} from "@angular/upgrade/static/src/common/constants";
-import {InputNg1To2UpComponent} from "./ng1/input-ng1-to2.component";
-import {ContainerForNg1UpgradedComponent} from "./ng2/container-for-ng1-upgraded.component";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {
+    MatButtonModule,
+    MatDatepicker,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule
+} from "@angular/material";
+import 'hammerjs';
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
@@ -25,30 +31,11 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 
 @Component({
     selector: 'ng2',
-    template: `
-        <div style="width: 1000px; margin: 0 auto; font-size: 18px;">
-            Hybrid app running!
-            <br>
-            <a routerLink="">Home</a>
-
-            <hr>
-
-            <router-outlet></router-outlet>
-
-            <hr>
-            <div ui-view></div>
-        </div>
-    `,
+    templateUrl: './ng2app.component.html',
+    styleUrls: ['./ng2app.component.scss'],
 })
 export class Ng2Component {
-    public constructor(
-        private router: Router,
-    ) {
-        this.router.events.subscribe((event: RouterEvent) => {
-            if (event instanceof NavigationEnd) {
-                // console.warn('GOTO: ', event.urlAfterRedirects);
-            }
-        });
+    public constructor() {
     }
 }
 
@@ -57,8 +44,10 @@ export class Ng2Component {
         BrowserModule,
         UpgradeModule,
         HomeNg2Module,
-        // We don't need to provide any routes.
-        // The router will collect all routes from all the registered modules.
+        NoopAnimationsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatDatepickerModule,
         RouterModule.forRoot([])
     ],
     providers: [
@@ -76,6 +65,9 @@ export class Ng2Component {
     exports: [
         Ng2Component,
         InputNg2Component,
+        MatButtonModule,
+        MatInputModule,
+        MatDatepickerModule,
     ],
     entryComponents: [
         InputNg2Component,

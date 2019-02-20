@@ -10,7 +10,7 @@
     "lib": ["es6", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
-    "outDir": "transpiled/app",
+    "outDir": "dist/app",
     "skipLibCheck": true,
     "sourceMap": true,
     "target": "es5"

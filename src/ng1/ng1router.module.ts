@@ -2,12 +2,12 @@ import * as angular from 'angular';
 import {downgradeComponent} from '@angular/upgrade/static';
 import {InputNg2Component} from "../ng2/input-ng2.component";
 
-export const InputModule = angular
-    .module('InputModule', [
+export const Ng1routerModule = angular
+    .module('Ng1RouterModule', [
         'ui.router',
     ]);
 
-InputModule.config(['$stateProvider', ($stateProvider) => {
+Ng1routerModule.config(['$stateProvider', ($stateProvider) => {
     $stateProvider
         .state('home', {
             url: '/ng1router/input',
@@ -17,27 +17,19 @@ InputModule.config(['$stateProvider', ($stateProvider) => {
                     squash: true,
                 },
             },
-            template: ` ng1input значение для передачи {{input2}}
-                        <br>
-                        <input-ng [id]="{{input2}}"></input-ng>
-            `,
+            template: `<input-ng [id]="{{input2}}" />`,
             controller: ['$stateParams', '$scope', ($stateParams, $scope) => {
                 $scope.input2 = $stateParams.input2;
             }],
         })
 
         .state('empty', {
-            url: '/',
-            template: '[empty ng1]'
-        })
-
-        .state('empty2', {
-            url: '/ng2/*',
-            template: '[empty ng1]'
+            url: '/{code: |ng2router/input}',
+            template: ''
         })
 }]);
 
-InputModule.directive('inputNg', downgradeComponent(
+Ng1routerModule.directive('inputNg', downgradeComponent(
     {
         component: InputNg2Component,
         inputs: ['id'],
