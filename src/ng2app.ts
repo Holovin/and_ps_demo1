@@ -1,4 +1,4 @@
-import {NgModule, Component} from '@angular/core';
+import {NgModule, Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router, RouterEvent, RouterModule, UrlHandlingStrategy} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
@@ -14,6 +14,8 @@ import {
     MatInputModule
 } from "@angular/material";
 import 'hammerjs';
+import {Ng1AppModule} from "./ng1app";
+import {setUpLocationSync} from "@angular/router/upgrade";
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
@@ -34,8 +36,13 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     templateUrl: './ng2app.component.html',
     styleUrls: ['./ng2app.component.scss'],
 })
-export class Ng2Component {
-    public constructor() {
+export class Ng2Component implements OnInit {
+    public constructor(private upgrade: UpgradeModule) {
+    }
+
+    ngOnInit() {
+        this.upgrade.bootstrap(document.body, [Ng1AppModule.name], {strictDi: true});
+        setUpLocationSync(this.upgrade);
     }
 }
 

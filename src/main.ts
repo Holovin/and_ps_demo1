@@ -18,10 +18,4 @@ import angular from 'angular';
  * bootstrap the Angular 1 module.
  */
 setAngularJSGlobal(angular);
-platformBrowserDynamic().bootstrapModule(Ng2AppModule).then(ref => {
-    const upgrade = (<any>ref.instance).upgrade;
-
-    // bootstrap angular1
-    upgrade.bootstrap(document.body, [Ng1AppModule.name], { strictDi: true });
-    setUpLocationSync(upgrade);
-});
+platformBrowserDynamic().bootstrapModule(Ng2AppModule);
