@@ -1,19 +1,12 @@
-import {NgModule, Component} from '@angular/core';
-import {NavigationEnd, Router, RouterEvent, RouterModule, UrlHandlingStrategy} from '@angular/router';
+import {Component, NgModule, ViewEncapsulation} from "@angular/core";
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
-
 import {HomeNg2Module} from "./ng2";
 import {InputNg2Component} from "./ng2/input-ng2.component";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {
-    MatButtonModule,
-    MatDatepicker,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatInputModule
-} from "@angular/material";
 import 'hammerjs';
+import {RouterModule, UrlHandlingStrategy} from "@angular/router";
+import {MatButtonModule, MatDatepickerModule, MatInputModule} from "@angular/material";
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
@@ -33,6 +26,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     selector: 'ng2',
     templateUrl: './ng2app.component.html',
     styleUrls: ['./ng2app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class Ng2Component {
     public constructor() {

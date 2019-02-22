@@ -2,25 +2,26 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'inputNg',
-    template: `        
+    template: `
         <mat-form-field>
             <input matInput placeholder="Значение" [value]="id" (change)="updateLink($event)">
         </mat-form-field>
-    
+
         <br>
-        
-        <a [routerLink]="urlPrefix" [queryParams]="{init3: _routerLink}">Test</a>
+
+        <a [routerLink]="urlPrefix" [queryParams]="{init3: value}">Go</a>
     `,
 })
 export class InputNg2Component implements OnInit {
     @Input() id: string = '';
     public urlPrefix = 'ng2router/input';
-    public _routerLink = '';
+    public value = '';
 
     ngOnInit(): void {
+        this.value = this.id;
     }
 
     updateLink($event): void {
-        this._routerLink = $event.target.value;
+        this.value = $event.target.value;
     }
 }
