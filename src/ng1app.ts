@@ -15,6 +15,8 @@ export const Ng1AppModule = angular.module('Ng1AppModule',
         uiRouter,
         Ng1routerModule.name,
         Ng1Module.name,
+        'ngMaterial',
+        'ngMessages'
     ]);
 
 Ng1AppModule.config(['$locationProvider', ($locationProvider) => {

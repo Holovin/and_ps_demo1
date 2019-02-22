@@ -9,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
     
         <br>
         
-        <a [routerLink]="urlPrefix" [queryParams]="{init3: _routerLink}">Test</a>
+        <a [routerLink]="urlPrefix" [queryParams]="{init3: _routerLink}">Road to ng2 router</a>
     `,
 })
 export class InputNg2Component implements OnInit {

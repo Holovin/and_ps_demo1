@@ -24,6 +24,7 @@ module.exports = {
             tsConfigPath: './tsconfig.json',
             mainPath: 'src/main.ts',
             sourceMap: true,
+            skipCodeGeneration: true
         }),
     ],
 
@@ -31,7 +32,7 @@ module.exports = {
         rules: [
             {test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/, use: ["@ngtools/webpack"]},
             {test: /\.html$/, loader: 'raw-loader'},
-            {test: /\.scss$/, exclude: /node_modules/, loaders: ['raw-loader', 'style-loader','css-loader', 'sass-loader']}
+            {test: /\.scss$/, exclude: /node_modules/, loaders: ['raw-loader', 'sass-loader']}
         ],
     },
 
@@ -39,6 +40,4 @@ module.exports = {
         historyApiFallback: true
     }
 };
-
-
 

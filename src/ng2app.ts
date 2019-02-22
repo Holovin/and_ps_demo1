@@ -1,4 +1,4 @@
-import {NgModule, Component, OnInit} from '@angular/core';
+import {NgModule, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {NavigationEnd, Router, RouterEvent, RouterModule, UrlHandlingStrategy} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
@@ -35,6 +35,7 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     selector: 'ng2',
     templateUrl: './ng2app.component.html',
     styleUrls: ['./ng2app.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class Ng2Component implements OnInit {
     public constructor(private upgrade: UpgradeModule) {
