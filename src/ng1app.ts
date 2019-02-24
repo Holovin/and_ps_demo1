@@ -4,7 +4,7 @@ import uiRouter  from '@uirouter/angularjs';
 
 // import app modules
 import {Ng1routerModule} from './ng1/ng1router.module';
-import {Ng1Module} from "./ng1/ng1module";
+import {Ng1Module} from './ng1/ng1module';
 
 export const Ng1AppModule = angular.module('Ng1AppModule',
     [

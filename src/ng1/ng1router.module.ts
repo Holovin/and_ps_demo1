@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 import {downgradeComponent} from '@angular/upgrade/static';
-import {InputNg2Component} from "../ng2/input-ng2.component";
+import {InputNg2Component} from '../ng2/input-ng2.component';
 
 export const Ng1routerModule = angular
     .module('Ng1RouterModule', [

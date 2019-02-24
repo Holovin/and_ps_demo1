@@ -1,17 +1,17 @@
-import {NgModule} from "@angular/core";
+import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
-import {HomeNg2Module} from "./ng2";
-import {InputNg2Component} from "./ng2/input-ng2.component";
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {HomeNg2Module} from './ng2';
+import {InputNg2Component} from './ng2/input-ng2.component';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
-import {RouterModule, UrlHandlingStrategy} from "@angular/router";
-import {MatButtonModule, MatDatepickerModule, MatInputModule} from "@angular/material";
-import {Ng2Component} from "./ng2app/ng2.component";
+import {RouterModule, UrlHandlingStrategy} from '@angular/router';
+import {MatButtonModule, MatDatepickerModule, MatInputModule} from '@angular/material';
+import {Ng2Component} from './ng2app/ng2.component';
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
-        return !url.toString().startsWith("/ng1router");
+        return !url.toString().startsWith('/ng1router');
     }
 
     extract(url) {

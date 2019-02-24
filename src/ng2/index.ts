@@ -1,11 +1,11 @@
-import {Directive, ElementRef, Injector, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {HomeNg2Component} from './home-ng2.component';
-import {NotFoundNg2Component} from "./not-found-ng2.component";
-import {InputNg1To2UpComponent} from "../ng1/input-ng1-to2.component";
-import {ContainerForNg1UpgradedComponent} from "./container-for-ng1-upgraded.component";
+import {NotFoundNg2Component} from './not-found-ng2.component';
+import {InputNg1To2UpComponent} from '../ng1/input-ng1-to2.component';
+import {ContainerForNg1UpgradedComponent} from './container-for-ng1-upgraded.component';
 
 
 @NgModule({

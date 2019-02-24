@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from "@angular/core";
-import {UpgradeModule} from "@angular/upgrade/static";
-import {Ng1AppModule} from "../ng1app";
-import {setUpLocationSync} from "@angular/router/upgrade";
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {UpgradeModule} from '@angular/upgrade/static';
+import {Ng1AppModule} from '../ng1app';
+import {setUpLocationSync} from '@angular/router/upgrade';
 
 @Component({
     selector: 'ng2',
