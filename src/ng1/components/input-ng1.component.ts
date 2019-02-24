@@ -8,10 +8,17 @@ class InputNg1Controller {
 
 export const InputNg1Component = {
     controller: InputNg1Controller,
-    template: `Это компонент на ng1
+    bindings: {
+        id: '<',
+    },
+    template: `
           <md-input-container>
-                <label>Email</label>
-                <input type="email">
+                <label>Value for link</label>
+                <input type="text" ng-model="$ctrl.id">
           </md-input-container>
+          
+          <br>
+          
+          <a ui-sref="ng1router({init2: $ctrl.id})">Go with {{ $ctrl.id }}</a>
     `,
 };

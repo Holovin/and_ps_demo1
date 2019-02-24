@@ -15,9 +15,18 @@ import {ContainerForNg1UpgradedComponent} from './container-for-ng1-upgraded.com
         RouterModule.forChild([
             {
                 path: '', children: [
-                    { path: '', component: HomeNg2Component },
-                    { path: 'ng2router/input', component: ContainerForNg1UpgradedComponent },
-                    { path: '**', component: NotFoundNg2Component },
+                    {
+                        path: '',
+                        component: HomeNg2Component
+                    },
+                    {
+                        path: 'ng2router/input',
+                        component: ContainerForNg1UpgradedComponent
+                    },
+                    {
+                        path: '**',
+                        component: NotFoundNg2Component
+                    },
                 ],
             },
         ]),

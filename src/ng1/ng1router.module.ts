@@ -9,17 +9,17 @@ export const Ng1routerModule = angular
 
 Ng1routerModule.config(['$stateProvider', ($stateProvider) => {
     $stateProvider
-        .state('home', {
-            url: '/ng1router/input',
+        .state('ng1router', {
+            url: '/ng1router/input?init2',
             params: {
-                input2: {
-                    value: Math.floor(Math.random() * 10),
-                    squash: true,
+                init2: {
+                    value: `${Math.floor(Math.random() * 10) + 1}`,
+                    squash: false,
                 },
             },
-            template: `<input-ng [id]="{{input2}}" />`,
+            template: `<input-ng [id]="{{init2}}" />`,
             controller: ['$stateParams', '$scope', ($stateParams, $scope) => {
-                $scope.input2 = $stateParams.input2;
+                $scope.init2 = $stateParams.init2;
             }],
         })
 

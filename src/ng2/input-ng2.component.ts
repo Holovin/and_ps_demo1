@@ -4,7 +4,7 @@ import {Component, Input, OnInit} from '@angular/core';
     selector: 'inputNg',
     template: `
         <mat-form-field>
-            <input matInput placeholder="Value for link" [value]="id" (change)="updateLink($event)">
+            <input matInput placeholder="Value for link" [value]="id" (input)="updateLink($event)">
         </mat-form-field>
 
         <br>
