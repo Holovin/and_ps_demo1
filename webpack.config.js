@@ -31,13 +31,14 @@ module.exports = {
         rules: [
             {test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/, use: ["@ngtools/webpack"]},
             {test: /\.html$/, loader: 'raw-loader'},
+            {test: /\.css$/, loaders: ['raw-loader', 'sass-loader']},
             {test: /\.scss$/, exclude: /node_modules/, loaders: ['raw-loader', 'sass-loader']}
         ],
     },
 
     devServer: {
         historyApiFallback: true
-    }
+    },
 };
 
 
