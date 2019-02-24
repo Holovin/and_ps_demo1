@@ -1,7 +1,3 @@
-/**
- * This file defines the root module of the Angular 1 of the application.
- */
-
 // import angular1
 import * as angular from 'angular';
 import uiRouter  from '@uirouter/angularjs';

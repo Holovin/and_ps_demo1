@@ -1,4 +1,4 @@
-import {Component, NgModule, ViewEncapsulation} from "@angular/core";
+import {NgModule} from "@angular/core";
 import {BrowserModule} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
 import {HomeNg2Module} from "./ng2";
@@ -7,6 +7,7 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import 'hammerjs';
 import {RouterModule, UrlHandlingStrategy} from "@angular/router";
 import {MatButtonModule, MatDatepickerModule, MatInputModule} from "@angular/material";
+import {Ng2Component} from "./ng2app/ng2.component";
 
 export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url) {
@@ -19,17 +20,6 @@ export class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
 
     merge(url, whole) {
         return url;
-    }
-}
-
-@Component({
-    selector: 'ng2',
-    templateUrl: './ng2app.component.html',
-    styleUrls: ['./ng2app.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-})
-export class Ng2Component {
-    public constructor() {
     }
 }
 
