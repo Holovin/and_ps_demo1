@@ -1,7 +1,14 @@
 @import "../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   width: 1000px;
   margin: 0 auto;
+}
+
+.head {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }

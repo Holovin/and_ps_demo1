@@ -4,12 +4,12 @@ import {Component, Input, OnInit} from '@angular/core';
     selector: 'inputNg',
     template: `
         <mat-form-field>
-            <input matInput placeholder="Значение" [value]="id" (change)="updateLink($event)">
+            <input matInput placeholder="Value for link" [value]="id" (change)="updateLink($event)">
         </mat-form-field>
 
         <br>
 
-        <a [routerLink]="urlPrefix" [queryParams]="{init3: value}">Go</a>
+        <a [routerLink]="urlPrefix" [queryParams]="{init3: value}">Go with {{ value }}</a>
     `,
 })
 export class InputNg2Component implements OnInit {
