@@ -22,7 +22,7 @@
     "@angular/router": "^6.1.10",
     "@angular/upgrade": "^6.1.10",
     "@uirouter/angularjs": "^0.3.2",
-    "angular": "1.6.10",
+    "angular": "1.8.0",
     "angular-animate": "1.6.10",
     "angular-aria": "1.6.10",
     "angular-material": "1.1.12",
